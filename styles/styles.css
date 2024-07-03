@@ -29,5 +29,17 @@ body {
 }
 
 .active {
-  color: #0095f8;
+  animation: zoom-in-out 0.3s forwards;
+}
+
+@keyframes zoom-in-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

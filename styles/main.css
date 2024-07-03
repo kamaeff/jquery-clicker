@@ -27,14 +27,13 @@ main .cliker {
   background-color: #0095f8;
   border-radius: 8px;
 
-  transition: 0.3s ease-in-out;
+  transition:
+    background-color 0.3s ease-in-out,
+    transform 1s ease-in-out;
 }
 
-#btn:hover,
 #reset:hover {
-  scale: 1.1;
+  scale: 1.05;
 
-  color: #000;
-  background-color: #fff;
-  border: 1px solid #0095f8;
+  background-color: #610d88fb;
 }
