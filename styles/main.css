@@ -1,0 +1,38 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 15px;
+}
+
+main .cliker {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+#btn {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+  padding: 5px 10px;
+
+  color: #fff;
+  background-color: #0095f8;
+  border-radius: 8px;
+
+  transition: 0.3s ease-in-out;
+}
+
+#btn:hover {
+  scale: 1.1;
+
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #0095f8;
+}
