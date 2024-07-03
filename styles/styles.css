@@ -16,8 +16,12 @@
 }
 
 html,
-body {
+body,
+button {
   font-family: "Rubik", sans-serif;
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
 }
 
 .container {
@@ -26,10 +30,45 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  gap: 20px;
 }
 
 .active {
   animation: zoom-in-out 0.3s forwards;
+}
+
+.btn {
+  cursor: pointer;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+
+  /* padding: 5px 20px; */
+
+  width: 60px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+
+  background: #c5c5c5;
+  border: none;
+  border-radius: 15px;
+
+  font-size: 18px;
+}
+
+.btn__state {
+  position: absolute;
+  left: 2px;
+
+  transition: left 0.3s ease;
+}
+
+.dark {
+  background-color: #1d1d1d;
+  color: #fff;
 }
 
 @keyframes zoom-in-out {

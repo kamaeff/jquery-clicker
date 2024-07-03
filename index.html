@@ -24,6 +24,11 @@
     <!--   </div> -->
     <!-- </header> -->
 
+
+    <button class="btn" id="back">
+      <div id="btn__state" class="btn__state">☀️</div>
+    </button>
+
     <div class="container">
       <main>
         <h1>Jquery clicker</h1>
@@ -39,11 +44,24 @@
           </div>
         </div>
 
-        <div class="">
-          count
+        <div class="coins">
+          <span>Coins</span>
           <span id="count"></span>
         </div>
       </main>
+
+      <div class="shop">
+        <h2>Shop</h2>
+        <div class="shop__container">
+          <button class="shop__container--btn">
+            <i data-lucide="circle-plus"></i>Upgrade
+          </button>
+
+          <button class="shop__container--btn">
+            <i data-lucide="mouse-pointer-click"></i>Auto tap
+          </button>
+        </div>
+      </div>
     </div>
 
     <script src="./scripts/main.js"></script>
