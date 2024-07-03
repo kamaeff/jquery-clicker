@@ -13,7 +13,8 @@ main .cliker {
   gap: 10px;
 }
 
-#btn {
+#btn,
+#reset {
   cursor: pointer;
 
   display: flex;
@@ -29,7 +30,8 @@ main .cliker {
   transition: 0.3s ease-in-out;
 }
 
-#btn:hover {
+#btn:hover,
+#reset:hover {
   scale: 1.1;
 
   color: #000;
