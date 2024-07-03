@@ -2,6 +2,7 @@
 
 @import url("./header.css");
 @import url("./main.css");
+@import url("./footer.css");
 
 * {
   margin: 0;
@@ -25,7 +26,7 @@ button {
 }
 
 .container {
-  height: 100vh;
+  height: 97vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

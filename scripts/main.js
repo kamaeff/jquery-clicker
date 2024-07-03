@@ -1,34 +1,27 @@
-console.log(
-  "This is my Jquery clicker project" + "\n" + "Created by Anton Kamaev"
-);
+import "./type.js";
 
-lucide.createIcons();
-
-const btn = $("#btn");
 let userCountStat = $("#count");
-
-// NOTE: Change color and count
-const colors = ["#7DA58D", "60718C", "#BF748E", "#F7C9B5", "#C49766"];
 let count = 0;
 
-btn.on("click", () => {
-  btn.toggleClass("active");
+// NOTE: Change color and count
+window.clickBtn = () => {
+  const colors = ["#7DA58D", "60718C", "#BF748E", "#F7C9B5", "#C49766"];
+  $(".cliker__btn").toggleClass("active");
 
   count++;
   $("#count").text(count);
 
   userCountStat.css("color", colors[Math.floor(Math.random() * colors.length)]);
-});
+};
 
 // NOTE: Reset
 $("#reset").on("click", () => {
   count = 0;
-
   userCountStat.text("");
 });
 
 // NOTE: Back animation
-$("#back").on("click", () => {
+window.changeBg = () => {
   $("body").toggleClass("dark");
 
   const btnState = $(".btn__state");
@@ -37,5 +30,13 @@ $("#back").on("click", () => {
 
   btnState.text(newText);
 
-  newText === "🌒" ? btnState.css("left", "28px") : btnState.css("left", "2px");
+  newText === "🌒" ? btnState.css("left", "32px") : btnState.css("left", "2px");
+};
+
+$(document).ready(() => {
+  console.log(
+    "This is my Jquery clicker project" + "\n" + "Created by Anton Kamaev"
+  );
+
+  lucide.createIcons();
 });

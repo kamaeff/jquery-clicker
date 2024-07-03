@@ -6,6 +6,10 @@ main {
   gap: 15px;
 }
 
+h1 {
+  font-size: 50px;
+}
+
 main .cliker {
   display: flex;
   align-items: center;
@@ -22,6 +26,10 @@ main .cliker {
 
 .coins span {
   font-size: 26px;
+}
+
+.shop h2 {
+  margin-bottom: 10px;
 }
 
 .shop__container {
@@ -46,7 +54,7 @@ main .cliker {
   background-color: #610d88fb;
 }
 
-#btn,
+.cliker__btn,
 #reset {
   cursor: pointer;
 
@@ -56,6 +64,7 @@ main .cliker {
   gap: 5px;
   padding: 5px 10px;
 
+  border: none;
   color: #fff;
   background-color: #0095f8;
   border-radius: 8px;

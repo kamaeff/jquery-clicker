@@ -6,6 +6,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 
     <link rel="stylesheet" href="styles/styles.css" />
 
@@ -25,19 +26,19 @@
     <!-- </header> -->
 
 
-    <button class="btn" id="back">
+    <button class="btn" onclick="changeBg()">
       <div id="btn__state" class="btn__state">☀️</div>
     </button>
 
     <div class="container">
       <main>
-        <h1>Jquery clicker</h1>
+        <h1 id="text"></h1>
 
         <div class="cliker">
-          <div id="btn">
+          <button class="cliker__btn" onclick="clickBtn()">
             <i data-lucide="bomb"></i>
             <span>Click me</span>
-           </div>
+          </button>
 
           <div id="reset">
             <i data-lucide="rotate-ccw"></i>
@@ -62,8 +63,14 @@
           </button>
         </div>
       </div>
+
+    
     </div>
 
-    <script src="./scripts/main.js"></script>
+    <footer>
+      <p>Created by Anton Kamaev</p>
+    </footer>
+
+    <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>
