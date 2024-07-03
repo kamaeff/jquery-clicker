@@ -17,7 +17,7 @@ window.clickBtn = () => {
 // NOTE: Reset
 $("#reset").on("click", () => {
   count = 0;
-  userCountStat.text("");
+  userCountStat.text("0");
 });
 
 // NOTE: Back animation
