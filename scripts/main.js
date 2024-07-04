@@ -1,4 +1,4 @@
-import { switchTheme } from './app.js';
+import {switchTheme} from './func.js';
 import './type.js';
 
 let userCountStat = $('#count');
@@ -22,7 +22,7 @@ window.changeBg = () => {
   switchTheme();
 };
 
-$('#byTap').text(`Coninz tap: ${stateTap}`);
+$('#byTap').text(`Coinz per tap: ${stateTap}`);
 $('#autoTap').text(`AutoTap: ${stateAutoTap ? '✅' : '❌'}`);
 
 $(document).ready(() => {

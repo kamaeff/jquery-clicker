@@ -9,62 +9,20 @@
   padding: 0;
   box-sizing: border-box;
 
-  -webkit-user-select: none;
   -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
 html,
-body,
-button {
+body {
   font-family: 'Rubik', sans-serif;
   transition:
     background-color 0.3s ease-in-out,
     color 0.3s ease-in-out;
 }
 
-.container {
-  height: 97vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  gap: 20px;
-}
-
 .active {
   animation: zoom-in-out 0.3s ease;
-}
-
-.btn {
-  cursor: pointer;
-  position: absolute;
-  top: 3%;
-  right: 3%;
-
-  /* padding: 5px 20px; */
-
-  width: 60px;
-  height: 30px;
-
-  display: flex;
-  align-items: center;
-
-  background: #c5c5c5;
-  border: none;
-  border-radius: 15px;
-
-  font-size: 18px;
-}
-
-.btn__state {
-  position: absolute;
-  left: 2px;
-
-  transition: left 0.3s ease;
 }
 
 .dark {
@@ -76,37 +34,6 @@ button {
   stroke: #fff;
 }
 
-.game--info {
-  width: 30%;
-  height: 50vh;
-  position: absolute;
-
-  top: 20%;
-
-  margin-left: 20px;
-  padding: 10px;
-
-  border: 3px dotted #000;
-  border-radius: 15px;
-}
-
-.game--info p {
-  text-align: justify;
-}
-
-.game--info__dark {
-  border: 3px dotted #fff;
-}
-
-.info__container {
-  display: flex;
-
-  gap: 20px;
-
-  font-weight: 600;
-  font-size: 16px;
-}
-
 #autoTap,
 #byTap {
   display: flex;
@@ -115,12 +42,6 @@ button {
   justify-content: center;
 
   gap: 5px;
-  padding: 5px 10px;
-
-  color: #1d1d1d;
-  background-color: #c5c5c5;
-
-  border-radius: 15px;
 }
 
 @keyframes zoom-in-out {

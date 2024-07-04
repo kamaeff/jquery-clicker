@@ -1,8 +1,11 @@
+// NOTE: Main switch theme func
 export const switchTheme = () => {
   $('body').toggleClass('dark');
   $('#clicker').toggleClass('dark--clicker');
 
-  $('.game--info').toggleClass('game--info__dark');
+  $('.container--info').toggleClass('border__dark');
+
+  $('.header__user').toggleClass('header__user--dark');
 
   const btnState = $('.btn__state');
   const currentText = btnState.text();

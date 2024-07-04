@@ -1,4 +1,5 @@
-import { switchTheme } from './app.js';
+//NOTE: Typewriter
+import {switchTheme} from './func.js';
 
 const app = $('#text').get(0);
 
@@ -12,9 +13,8 @@ const typewriter = new Typewriter(app, {
   onCreateTextNode: customNodeCreator,
 });
 
-// TODO: (A3) @Задача 3
 typewriter
-  .typeString('JQ clicker')
+  .typeString('Coinz clicker')
   .start()
   .callFunction(() => {
     $('.Typewriter__cursor').text('');

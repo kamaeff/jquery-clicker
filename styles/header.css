@@ -1,7 +1,62 @@
-.nav__container {
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 20px;
+}
+
+.header__user {
+  z-index: 1000;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
 
-  list-style: none;
+  gap: 5px;
+  padding: 3px 10px;
+
+  font-size: 18px;
+
+  background: none;
+  color: #000;
+  border: none;
+  border-radius: 15px;
+
+  transition: 0.3s ease;
+}
+
+.header__user--dark {
+  color: #fff;
+}
+
+.btn {
+  z-index: 1000;
+  cursor: pointer;
+  position: relative;
+
+  width: 60px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 18px;
+
+  background: #c5c5c5;
+  border: none;
+  border-radius: 15px;
+
+  transition: 0.3s ease;
+}
+
+.btn__state {
+  position: absolute;
+  left: 2px;
+
+  transition: left 0.3s ease;
+}
+
+.header__user:hover,
+.btn:hover {
+  scale: 1.1;
 }
