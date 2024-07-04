@@ -25,7 +25,7 @@ if ($db) {
   <link rel="stylesheet" href="styles/styles.css" />
   <link rel="icon" type="image/x-icon" href="./assets/coinz.svg" />
 
-  <title>Jquery clicker</title>
+  <title>Coinz clicker</title>
 </head>
 
 <body>

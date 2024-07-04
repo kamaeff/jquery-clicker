@@ -26,7 +26,7 @@ $('#autoTap').text(`AutoTap: ${stateAutoTap ? '✅' : '❌'}`);
 
 $(document).ready(() => {
   console.log(
-    'This is my Jquery clicker project' + '\n' + 'Created by Anton Kamaev',
+    'This is my jQuery clicker project' + '\n' + 'Created by Anton Kamaev',
   );
 
   lucide.createIcons();

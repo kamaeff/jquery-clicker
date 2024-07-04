@@ -1,8 +1,8 @@
-# Jquery Learning Project 🎓
+# jQuery Learning Project 🎓
 
-## This is a clicker game made with jQuery 🖱️
+## This is a clicker game made with jQuery and PHP 🖱️
 
-This project is a simple clicker game built using jQuery. The main features include:
+This project is a simple clicker game built using jQuery and PHP. The main features include:
 
 ### Features
 
@@ -18,7 +18,7 @@ Credits the creator, Anton Kamaev. 👨‍💻
 
 Enjoy clicking and earning coins! (Tap-Tap)
 
-## Code Snippets
+## jQuery Code Snippets
 
 - [Change Color and Count](#change-color-and-count)
 - [Background Animation](#background-animation)
