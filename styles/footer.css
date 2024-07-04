@@ -1,4 +1,17 @@
 footer {
   display: flex;
   justify-content: center;
+
+  gap: 2px;
+}
+
+footer a {
+  font-weight: 600;
+
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+footer a:hover {
+  scale: 1.05;
 }

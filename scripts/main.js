@@ -1,3 +1,4 @@
+import { switchTheme } from './app.js';
 import './type.js';
 
 let userCountStat = $('#count');
@@ -18,20 +19,11 @@ window.clickBtn = () => {
 
 // NOTE: Back animation
 window.changeBg = () => {
-  $('body').toggleClass('dark');
-  $('#clicker').toggleClass('dark--clicker');
-
-  const btnState = $('.btn__state');
-  const currentText = btnState.text();
-  const newText = currentText === '☀️' ? '🌒' : '☀️';
-
-  btnState.text(newText);
-
-  newText === '🌒' ? btnState.css('left', '32px') : btnState.css('left', '2px');
+  switchTheme();
 };
 
-$('#byTap').text(`Tap: ${stateTap}`);
-$('#autoTap').text(`AutoTap ${stateAutoTap ? '✅' : '❌'}`);
+$('#byTap').text(`Coninz tap: ${stateTap}`);
+$('#autoTap').text(`AutoTap: ${stateAutoTap ? '✅' : '❌'}`);
 
 $(document).ready(() => {
   console.log(

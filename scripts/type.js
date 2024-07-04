@@ -1,6 +1,8 @@
-const app = $("#text").get(0);
+import { switchTheme } from './app.js';
 
-var customNodeCreator = (character) => {
+const app = $('#text').get(0);
+
+var customNodeCreator = character => {
   return document.createTextNode(character);
 };
 
@@ -10,9 +12,14 @@ const typewriter = new Typewriter(app, {
   onCreateTextNode: customNodeCreator,
 });
 
+// TODO: (A3) @Задача 3
 typewriter
-  .typeString("JQ clicker")
+  .typeString('JQ clicker')
   .start()
   .callFunction(() => {
-    $(".Typewriter__cursor").text("");
+    $('.Typewriter__cursor').text('');
+
+    setTimeout(() => {
+      switchTheme();
+    }, 3000);
   });
