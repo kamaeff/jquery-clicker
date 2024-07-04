@@ -10,11 +10,46 @@ h1 {
   font-size: 50px;
 }
 
-main .cliker {
+.cliker {
+  width: 40%;
+  position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
 
   gap: 10px;
+}
+
+.cliker__btn {
+  position: relative;
+  cursor: pointer;
+
+  border: none;
+  color: #fff;
+  background: none;
+  border-radius: 8px;
+
+  transition:
+    background-color 0.3s ease-in-out,
+    transform 1s ease-in-out;
+}
+
+.clicker--info {
+  position: absolute;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+  padding: 20% 10px;
+
+  color: #fff;
+  background-color: #0095f8;
+
+  border-radius: 8px;
 }
 
 .coins,
@@ -25,7 +60,7 @@ main .cliker {
 }
 
 .coins span {
-  font-size: 26px;
+  font-size: 23px;
 }
 
 .shop h2 {
@@ -40,6 +75,7 @@ main .cliker {
 }
 
 .shop__container--btn {
+  position: relative;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -51,31 +87,41 @@ main .cliker {
   border: none;
   border-radius: 8px;
   color: #fff;
-  background-color: #610d88fb;
+  background-color: rgb(189, 66, 139);
+
+  transition: 0.3s ease-in-out;
 }
 
-.cliker__btn,
-#reset {
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-
-  gap: 5px;
-  padding: 5px 10px;
-
-  border: none;
-  color: #fff;
-  background-color: #0095f8;
-  border-radius: 8px;
-
-  transition:
-    background-color 0.3s ease-in-out,
-    transform 1s ease-in-out;
-}
-
-#reset:hover {
+.shop__container--btn:hover {
   scale: 1.05;
 
   background-color: #610d88fb;
+}
+
+@media (max-width: 1200px) {
+  .cliker {
+    width: 60%;
+  }
+}
+
+@media (max-width: 992px) {
+  .cliker {
+    width: 80%;
+  }
+}
+
+@media (max-width: 680px) {
+  .cliker {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .clicker--info {
+    position: static;
+
+    display: flex;
+    flex-direction: row;
+
+    padding: 5px 10px;
+  }
 }
