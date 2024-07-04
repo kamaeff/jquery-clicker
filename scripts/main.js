@@ -1,5 +1,5 @@
-import {switchTheme} from './func.js';
-import './type.js';
+import { switchTheme } from './subfunc/func.js';
+import './subfunc/type.js';
 
 let count = 0;
 let stateTap = 1;
@@ -26,7 +26,7 @@ $('#autoTap').text(`AutoTap: ${stateAutoTap ? '✅' : '❌'}`);
 
 $(document).ready(() => {
   console.log(
-    'This is my Jquery clicker project' + '\n' + 'Created by Anton Kamaev'
+    'This is my Jquery clicker project' + '\n' + 'Created by Anton Kamaev',
   );
 
   lucide.createIcons();
