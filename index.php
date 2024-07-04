@@ -1,3 +1,16 @@
+<?php
+require_once 'php/Connection.php';
+
+$connection = new Connection();
+$db = $connection->connect();
+
+if ($db) {
+    echo "<script>console.log('Connection successful');</script>";
+} else {
+    echo "<script>console.log('Connection failed');</script>";
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
