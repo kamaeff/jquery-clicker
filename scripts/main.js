@@ -26,6 +26,10 @@ window.userModal = () => {
   $('#modal').toggleClass('modal__open');
 };
 
+window.closeModal = () => {
+  $('#modal').removeClass('modal__open');
+};
+
 window.upgradeTap = () => {
   upgradeState++;
   let check = upgradeState * 10;
@@ -55,4 +59,10 @@ $(document).ready(() => {
   );
 
   lucide.createIcons();
+
+  $('#modal').on('click', function(event) {
+    if ($(event.target).is('#modal')) {
+      $(this).removeClass('modal__open');
+    }
+  });
 });

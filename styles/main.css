@@ -82,8 +82,6 @@ h1 {
 }
 
 .cliker__btn {
-  cursor: pointer;
-
   border: none;
   color: #fff;
   background: none;
@@ -123,15 +121,12 @@ h1 {
 }
 
 .shop__container--btn {
-  cursor: pointer;
   display: flex;
   align-items: center;
 
   gap: 10px;
   padding: 5px 10px;
   outline: none;
-
-  font-family: 'Rubik', sans-serif;
 
   border: none;
   border-radius: 15px;

@@ -1,0 +1,151 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.modal__container {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.3);
+
+  width: 30%;
+  height: 30%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: #fafafa;
+  color: #000;
+
+  border-radius: 10px;
+  z-index: 1000;
+
+  animation: modalAppear 0.3s ease forwards;
+}
+
+.modal__container--title {
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  margin-bottom: 20px;
+
+  font-size: 20px;
+}
+
+.modal__open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form-group {
+  position: relative;
+  width: 50%;
+
+  margin: 10px auto;
+  text-align: left;
+}
+
+.form-group label {
+  position: absolute;
+  left: 15px;
+
+  transform: translateY(-50%);
+  transition:
+    top 0.3s,
+    font-size 0.3s;
+
+  background: #fff;
+  font-weight: 500;
+}
+
+input[type='email'],
+input[type='password'] {
+  width: 100%;
+  padding: 0.5rem;
+
+  background: #fff;
+  outline: none;
+  border: 1px solid #1d1d1d;
+  border-radius: 10px;
+
+  transition: 0.5s ease-in-out;
+}
+
+input[type='email']:focus,
+input[type='password']:focus {
+  scale: 1.03;
+}
+
+.login__form--btn {
+  width: 30%;
+
+  padding: 10px;
+  font-weight: 600;
+
+  background-color: #0095f8;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.login__form--btn:hover {
+  background-color: rgb(189, 66, 139);
+
+  scale: 1.05;
+}
+
+@keyframes modalAppear {
+  from {
+    transform: translate(-50%, -50%) scale(0.3);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .modal__container {
+    width: 40%;
+  }
+}
+
+@media (max-width: 992px) {
+  .modal__container {
+    width: 50%;
+  }
+}
+
+@media (max-width: 680px) {
+  .modal__container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 520px) {
+  .modal__container {
+    width: 90%;
+  }
+}
