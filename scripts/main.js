@@ -23,7 +23,7 @@ window.changeBg = () => {
 };
 
 window.userModal = () => {
-  $('#modal').toggleClass('modal__open');
+  $('#modal').addClass('modal__open');
 };
 
 window.closeModal = () => {

@@ -28,6 +28,7 @@ h1 {
 .container--rules {
   position: absolute;
 
+  top: 25%;
   left: 3%;
   width: 30%;
   height: 30%;
@@ -41,8 +42,15 @@ h1 {
   margin-bottom: 15px;
 }
 
-.container--rules p {
+.container--rules div {
   text-align: justify;
+
+  font-size: 14px;
+}
+
+.container--rules div p span {
+  font-size: 16px;
+  color: rgb(189, 66, 139);
 }
 
 .container--info {
@@ -144,7 +152,7 @@ h1 {
 
 @media (max-width: 992px) {
   .container {
-    height: 100vh;
+    height: 120vh;
     flex-direction: column;
   }
 

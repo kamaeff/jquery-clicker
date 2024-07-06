@@ -10,6 +10,8 @@ footer a {
 
   text-decoration: none;
   transition: 0.3s ease-in-out;
+
+  color: #0095f8;
 }
 
 footer a:hover {
