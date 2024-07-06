@@ -3,8 +3,6 @@ footer {
   justify-content: center;
 
   gap: 5px;
-
-  text-shadow: 0 0 20px rgba(0, 149, 248, 0.8);
 }
 
 footer a {
@@ -14,6 +12,8 @@ footer a {
   transition: 0.3s ease-in-out;
 
   color: #0095f8;
+
+  text-shadow: 0 0 5px rgba(0, 149, 248, 0.8);
 }
 
 footer a:hover {
