@@ -5,7 +5,10 @@ export const switchTheme = () => {
 
   $('.container--info').toggleClass('border__dark');
 
-  $('.header__user').toggleClass('header__user--dark');
+  $('.header__user')
+    .toggleClass('header__user--dark')
+    .toggleClass('dark_shodow');
+  $('h1').toggleClass('dark_shodow');
 
   const btnState = $('.btn__state');
   const currentText = btnState.text();
