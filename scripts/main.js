@@ -5,6 +5,7 @@ let coinz = 0;
 let stateTap = 1;
 let stateAutoTap = false;
 let upgradeState = 0;
+let taps = 0;
 
 // NOTE: Change color and count
 window.clickBtn = () => {
@@ -12,9 +13,12 @@ window.clickBtn = () => {
   $('.cliker__btn').toggleClass('active');
 
   coinz += stateTap;
+  taps++;
   $('#count').text(coinz);
-
   $('#count').css('color', colors[Math.floor(Math.random() * colors.length)]);
+  $('#allTaps').text(taps);
+
+  $('.error').text('').removeClass('show');
 };
 
 // NOTE: Back animation
@@ -41,8 +45,6 @@ window.upgradeTap = () => {
     $('#count').text(coinz);
     $('#byTap').text(stateTap);
     $('#nextUpgrade').text(stateTap * 10);
-
-    $('.error').text('').removeClass('show');
   } else {
     upgradeState--;
     $('.error').text(`No Coinz for upgrade. Tap harder! ;)`).addClass('show');
