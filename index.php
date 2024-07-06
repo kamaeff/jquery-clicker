@@ -30,9 +30,13 @@ if ($db) {
 
 <body>
   <header>
-    <button class="header__user">
+    <button class="header__user" onclick="userModal()">
       <i data-lucide="circle-user-round"></i> User
     </button>
+
+    <div class="modal" id="modal">
+      <p>Work</p>
+    </div>
 
     <button class="btn" onclick="changeBg()">
       <div id="btn__state" class="btn__state">☀️</div>
@@ -61,7 +65,7 @@ if ($db) {
 
       <div class="shop">
         <div class="shop__container">
-          <button class="shop__container--btn">
+          <button class="shop__container--btn" onclick="upgradeTap()">
             <i data-lucide="circle-plus"></i>Upgrade
           </button>
 
@@ -70,12 +74,26 @@ if ($db) {
           </button>
         </div>
       </div>
+
+      <p class="error"></p>
     </div>
 
     <div class="container--info">
       <h2>Stats:</h2>
-      <p id="byTap"></p>
-      <p id="autoTap"></p>
+      <div>
+        <span class="bold">Coinz per tap:</span> <span id="byTap"></span>
+      </div>
+
+      <div>
+        <span class="bold">AutoTap:</span> <span id="autoTap"></span>
+      </div>
+
+      </br>
+
+      <div>
+        <span class="bold">Next Upgrade:</span> <span id="nextUpgrade"></span> Coinz
+      </div>
+
     </div>
 
     <div class="container--rules">
@@ -95,6 +113,7 @@ if ($db) {
   </footer>
 
   <script type="module" src="./scripts/main.js"></script>
+
 </body>
 
 </html>

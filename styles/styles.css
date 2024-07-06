@@ -24,6 +24,10 @@ body {
   animation: zoom-in-out 0.3s ease;
 }
 
+.bold {
+  font-weight: 600;
+}
+
 .dark {
   background-color: #1d1d1d;
   color: #fff;
@@ -33,14 +37,24 @@ body {
   stroke: #fff;
 }
 
-#autoTap,
-#byTap {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+.modal {
+  display: none;
+}
 
-  gap: 5px;
+.modal__open {
+  display: block;
+}
+
+.error {
+  visibility: hidden;
+  height: 20px;
+  color: red;
+
+  transition: visibility 1s;
+}
+
+.error.show {
+  visibility: visible;
 }
 
 @keyframes zoom-in-out {
