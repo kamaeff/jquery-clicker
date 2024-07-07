@@ -18,3 +18,28 @@ export const switchTheme = () => {
 
   newText === '🌒' ? btnState.css('left', '32px') : btnState.css('left', '2px');
 };
+
+export function createTapAnimation() {
+  const colors = ['#7DA58D', '#60718C', '#BF748E', '#F7C9B5', '#C49766'];
+
+  const tap = $('<div class="tap">TAP</div>');
+  $('body').append(tap);
+
+  const tapWidth = tap.outerWidth();
+  const tapHeight = tap.outerHeight();
+  const windowWidth = $(window).width();
+  const windowHeight = $(window).height();
+  const randomX = Math.random() * (windowWidth - tapWidth);
+  const randomY = Math.random() * (windowHeight - tapHeight);
+
+  tap.css({
+    position: 'absolute',
+    top: randomY,
+    left: randomX,
+    color: colors[Math.floor(Math.random() * colors.length)],
+  });
+
+  setTimeout(() => {
+    tap.remove();
+  }, 1000);
+}

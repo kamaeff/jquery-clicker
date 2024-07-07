@@ -128,20 +128,49 @@ h1 {
   gap: 20px;
 }
 
-.shop__container--btn {
-  display: flex;
+.button {
+  position: relative;
+  min-width: 100px;
+  min-height: 30px;
+
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
 
   gap: 10px;
-  padding: 5px 10px;
-  outline: none;
+  padding: 10px;
 
+  font-family: 'Rubik', sans-serif;
+  font-size: 14px;
+
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+
+  background: rgb(189, 66, 139);
+  background: linear-gradient(90deg,
+      rgba(189, 66, 139, 1) 0%,
+      rgba(189, 66, 139, 1) 100%);
   border: none;
   border-radius: 15px;
-  color: #fff;
-  background-color: rgb(189, 66, 139);
+  box-shadow: 4px 4px 8px rgba(189, 66, 139, 0.64);
 
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.button:hover,
+.button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+.button:hover::before,
+.button:focus::before {
+  opacity: 1;
 }
 
 .shop__container--btn:hover {
@@ -152,8 +181,10 @@ h1 {
 
 @media (max-width: 992px) {
   .container {
-    height: 120vh;
+    height: 140vh;
     flex-direction: column;
+
+    gap: 0;
   }
 
   .container--rules,

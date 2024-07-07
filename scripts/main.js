@@ -1,5 +1,6 @@
-import {switchTheme} from './subfunc/func.js';
+import { switchTheme, createTapAnimation } from './subfunc/func.js';
 import './subfunc/type.js';
+import './subfunc/auth.js';
 
 let coinz = 0;
 let stateTap = 1;
@@ -7,10 +8,16 @@ let stateAutoTap = false;
 let upgradeAutoTap = 0;
 let upgradeState = 0;
 let taps = 0;
+let autoTapInterval;
+
+// NOTE: Back animation
+window.changeBg = () => {
+  switchTheme();
+};
 
 // NOTE: Change color and count
 window.clickBtn = () => {
-  const colors = ['#7DA58D', '60718C', '#BF748E', '#F7C9B5', '#C49766'];
+  const colors = ['#7DA58D', '#60718C', '#BF748E', '#F7C9B5', '#C49766'];
   $('.cliker__btn').toggleClass('active');
 
   coinz += stateTap;
@@ -21,15 +28,20 @@ window.clickBtn = () => {
   $('#allTaps').text(taps);
 
   $('.error').text('').removeClass('show');
+
+  createTapAnimation();
 };
 
+// NOTE: AutoTap logic
 window.autoTap = () => {
   if (stateAutoTap && !autoTapInterval) {
-    setInterval(() => {
+    autoTapInterval = setInterval(() => {
       coinz += upgradeAutoTap;
       taps++;
       $('#count').text(coinz);
       $('#allTaps').text(taps);
+
+      createTapAnimation();
     }, 3000);
   }
 };
@@ -44,25 +56,13 @@ window.upgradeAutoTap = () => {
 
     $('#count').text(coinz);
     $('#autoTap').text('✅');
+    $('#perAutoTap').text(upgradeAutoTap);
 
     window.autoTap();
   } else {
     upgradeAutoTap--;
     $('.error').text(`No Coinz for upgrade. Tap harder! ;)`).addClass('show');
   }
-};
-
-// NOTE: Back animation
-window.changeBg = () => {
-  switchTheme();
-};
-
-window.userModal = () => {
-  $('#modal').addClass('modal__open');
-};
-
-window.closeModal = () => {
-  $('#modal').removeClass('modal__open');
 };
 
 window.upgradeTap = () => {
@@ -93,7 +93,7 @@ $(document).ready(() => {
 
   lucide.createIcons();
 
-  $('#modal').on('click', function (event) {
+  $('#modal').on('click', function(event) {
     if ($(event.target).is('#modal')) {
       $(this).removeClass('modal__open');
     }
