@@ -3,11 +3,11 @@ $connection = new Connection();
 $db = $connection->connect();
 
 if ($db) {
-    echo "<script>
+  echo "<script>
     console.log('Connection successful');
   </script>";
 } else {
-    echo "<script>
+  echo "<script>
     console.log('Connection failed');
   </script>";
 }
@@ -84,7 +84,7 @@ if ($db) {
             <i data-lucide="circle-plus"></i>Upgrade
           </button>
 
-          <button class="shop__container--btn">
+          <button class="shop__container--btn" onclick="upgradeAutoTap()">
             <i data-lucide="mouse-pointer-click"></i>Auto tap
           </button>
         </div>
@@ -120,26 +120,29 @@ if ($db) {
       <div>
         <p>
           <span class="bold"><i data-lucide="chevrons-right"></i> Upgrade for Click:</span>
-
           You can upgrade the number of Coinz per click by buying improvements in the
           store.
           The first upgrade costs 10 Coinz and increases the number of Coinz per click to 2.
           Each subsequent upgrade costs 10 times the previous one and increases Coinz per click by 1.
         </p>
+
         </br>
+
         <p>
           <span class="bold"><i data-lucide="chevrons-right"></i> Autoclicker (AutoTap):</span>
-          You can purchase an autoclicker that clicks once per second.
+          You can purchase an autoclicker that clicks once per 3 second.
           The first autoclicker costs 1000 Coinz and earns 1 Coin for each click.
           Each subsequent autoclicker costs 1000 times the previous one and increases taps per click by 1.
         </p>
 
         </br>
+
         <p>
           <span class="bold"><i data-lucide="chevrons-right"></i> Game Objective:</span>
           Your goal is to earn as many Coinz as possible by improving your earnings.
           The game continues indefinitely, allowing you to increase your earnings.
         </p>
+
         </br>
 
         <p>The right side shows your current Coinz balance.</p>
