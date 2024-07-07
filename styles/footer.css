@@ -11,11 +11,17 @@ footer a {
   text-decoration: none;
   transition: 0.3s ease-in-out;
 
-  color: #0095f8;
+  color: #00bfff;
 
   text-shadow: 0 0 5px rgba(0, 149, 248, 0.8);
 }
 
 footer a:hover {
   scale: 1.05;
+}
+
+@media (max-width: 992px) {
+  footer {
+    display: none;
+  }
 }

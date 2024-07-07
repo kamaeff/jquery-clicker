@@ -1,8 +1,8 @@
 # jQuery Learning Project 🎓
 
-## This is a clicker game made with jQuery and PHP 🖱️
+## This is a clicker game made with jQuery 🖱️
 
-This project is a simple clicker game built using jQuery and PHP. The main features include:
+This project is a simple clicker game built using jQuery. The main features include:
 
 ### Features
 
