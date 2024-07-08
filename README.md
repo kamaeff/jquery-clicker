@@ -1,6 +1,6 @@
 # jQuery Learning Project 🎓
 
-## This is a clicker game made with jQuery [jquery-clicker](https://kamaeff.github.io/jquery-clicker/) 🖱️
+## This is a clicker game made with jQuery ([link](https://kamaeff.github.io/jquery-clicker/)) 🖱️
 
 [Clicker](https://github.com/kamaeff/jquery-clicker/assets/99755906/eaeed489-e95d-4505-856e-6f3d007b0af8)
 
