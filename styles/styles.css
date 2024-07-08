@@ -22,6 +22,8 @@ body {
 
 button {
   cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 
   font-family: 'Rubik', sans-serif;
 }
