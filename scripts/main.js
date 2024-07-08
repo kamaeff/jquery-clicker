@@ -1,5 +1,5 @@
 import { switchTheme, createTapAnimation } from './subfunc/func.js';
-import { colors, rewards } from './vars.js';
+import { colors } from './vars.js';
 import './subfunc/type.js';
 
 let coinz = 0;
@@ -55,7 +55,10 @@ window.changeBg = () => {
 
 //NOTE: Reward notification
 function reward(taps) {
-  return rewards[taps] || 0;
+  if (taps % 50 === 0) {
+    return parseInt(5 * Math.pow(2, Math.log2(taps / 50)));
+  }
+  return 0;
 }
 
 function showNotification(message) {
@@ -163,12 +166,6 @@ $('#nextUpgradeAuto').text(1000);
 $('#byTap').text(stateTap);
 $('#autoTap').text(stateAutoTap ? '✅' : '❌');
 
-$(window).on('load', function() {
-  $('#loader').fadeOut('slow', function() {
-    $('#content').fadeIn('slow');
-  });
-});
-
 $(document).ready(() => {
   console.log(
     'This is my jQuery clicker project' + '\n' + 'Created by Anton Kamaev',
@@ -182,5 +179,11 @@ $(document).ready(() => {
     if ($(event.target).is('#modal')) {
       $(this).removeClass('modal__open');
     }
+  });
+
+  $(window).on('load', function() {
+    $('#loader').fadeOut('slow', function() {
+      $('#content').fadeIn('slow');
+    });
   });
 });
