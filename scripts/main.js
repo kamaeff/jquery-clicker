@@ -40,7 +40,7 @@ const loadGameState = () => {
     $('#autoTap').text(stateAutoTap ? '✅' : '❌');
     $('#perAutoTap').text(upgradeAutoTap.toLocaleString());
     $('#nextUpgrade').text(stateTap * 10);
-    $('#nextUpgradeAuto').text(((upgradeAutoTap + 1) * 1000).toLocaleString());
+    $('#nextUpgradeAuto').text((upgradeAutoTap + 1) * 1000);
 
     if (stateAutoTap) {
       window.autoTap();
@@ -142,7 +142,7 @@ window.upgradeAutoTap = () => {
     $('#count').text(coinz.toLocaleString());
     $('#autoTap').text('✅');
     $('#perAutoTap').text(upgradeAutoTap.toLocaleString);
-    $('#nextUpgradeAuto').text(((upgradeAutoTap + 1) * 1000).toLocaleString());
+    $('#nextUpgradeAuto').text((upgradeAutoTap + 1) * 1000);
 
     window.autoTap();
     saveGameState();
