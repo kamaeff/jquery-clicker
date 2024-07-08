@@ -168,6 +168,12 @@ $(document).ready(() => {
     'This is my jQuery clicker project' + '\n' + 'Created by Anton Kamaev',
   );
 
+  $(window).on('load', function() {
+    $('#loader').fadeOut('slow', function() {
+      $('#content').fadeIn('slow');
+    });
+  });
+
   loadGameState();
 
   lucide.createIcons();

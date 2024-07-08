@@ -16,130 +16,132 @@
 </head>
 
 <body>
-  <div class="notification">
-    <span id="notificationText"></span>
-  </div>
+  <div id="loader"></div>
+  <div id="content" style="display:none;">
+    <div class="notification">
+      <span id="notificationText"></span>
+    </div>
 
-  <header>
-    <!-- <button class="header__user" onclick="userModal()"> -->
-    <!--   <i data-lucide="circle-user-round"></i> -->
-    <!--   Sign in -->
-    <!-- </button> -->
+    <header>
+      <!-- <button class="header__user" onclick="userModal()"> -->
+      <!--   <i data-lucide="circle-user-round"></i> -->
+      <!--   Sign in -->
+      <!-- </button> -->
 
-    <button class="btn" onclick="changeBg()">
-      <div id="btn__state" class="btn__state">☀️</div>
-    </button>
-  </header>
+      <button class="btn" onclick="changeBg()">
+        <div id="btn__state" class="btn__state">☀️</div>
+      </button>
+    </header>
 
-  <main class="container">
-    <div class="container__main">
-      <h1 id="text"></h1>
+    <main class="container">
+      <div class="container__main">
+        <h1 id="text"></h1>
 
-      <div class="cliker">
-        <button class="cliker__btn" title="Let's GOOOOO" onclick="clickBtn()">
-          <svg id="clicker" width="300px" height="300px" viewBox="0 0 24 24" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M12 16H13C13.6667 16 15 15.6 15 14C15 12.4 13.6667 12 13 12H11C10.3333 12 9 11.6 9 10C9 8.4 10.3333 8 11 8H12M12 16H9M12 16V18M15 8H12M12 8V6M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-              stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </button>
-      </div>
-
-      <div class="coins">
-        <span><i data-lucide="coins"></i>Coinz</span>
-        <span id="count">0</span>
-      </div>
-
-      <div class="shop">
-        <div class="shop__container">
-          <button class="button" onclick="upgradeTap()">
-            <i data-lucide="circle-plus"></i>Upgrade
-          </button>
-
-          <button class="button" onclick="upgradeAutoTap()">
-            <i data-lucide="mouse-pointer-click"></i>Auto tap
+        <div class="cliker">
+          <button class="cliker__btn" title="Let's GOOOOO" onclick="clickBtn()">
+            <svg id="clicker" width="300px" height="300px" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 16H13C13.6667 16 15 15.6 15 14C15 12.4 13.6667 12 13 12H11C10.3333 12 9 11.6 9 10C9 8.4 10.3333 8 11 8H12M12 16H9M12 16V18M15 8H12M12 8V6M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
           </button>
         </div>
+
+        <div class="coins">
+          <span><i data-lucide="coins"></i>Coinz</span>
+          <span id="count">0</span>
+        </div>
+
+        <div class="shop">
+          <div class="shop__container">
+            <button class="button" onclick="upgradeTap()">
+              <i data-lucide="circle-plus"></i>Upgrade
+            </button>
+
+            <button class="button" onclick="upgradeAutoTap()">
+              <i data-lucide="mouse-pointer-click"></i>Auto tap
+            </button>
+          </div>
+        </div>
+
+        <p class="error"></p>
       </div>
 
-      <p class="error"></p>
-    </div>
+      <div class="container--info">
+        <!-- <h2>Stats:</h2> -->
+        <div>
+          <span class="bold blue">Coinz per tap:</span> <span id="byTap"></span>
+        </div>
 
-    <div class="container--info">
-      <!-- <h2>Stats:</h2> -->
-      <div>
-        <span class="bold blue">Coinz per tap:</span> <span id="byTap"></span>
-      </div>
-
-      <div>
-        <span class="bold blue">Coinz per AutoTap:</span> <span id="perAutoTap">0</span>
-      </div>
-
-      </br>
-
-      <div>
-        <span class="bold blue">Total taps:</span> <span id="allTaps">0</span>
-      </div>
-
-      <div>
-        <span class="bold blue">AutoTap:</span> <span id="autoTap"></span>
-      </div>
-
-      <div>
-        <span class="bold blue">Tap upgrade:</span> <span id="nextUpgrade"></span>
-      </div>
-
-      <div>
-        <span class="bold blue">AutoTap upgrade:</span> <span id="nextUpgradeAuto"></span>
-      </div>
-
-    </div>
-
-    <div class="container--rules">
-      <div>
-        <p>
-          <span class="bold"><i data-lucide="chevrons-right"></i> Upgrade for Click:</span>
-          You can upgrade the number of Coinz per click by buying improvements in the
-          store.
-          The first upgrade costs 10 Coinz and increases the number of Coinz per click to 2.
-          Each subsequent upgrade costs 10 times the previous one and increases Coinz per click by 1.
-        </p>
+        <div>
+          <span class="bold blue">Coinz per AutoTap:</span> <span id="perAutoTap">0</span>
+        </div>
 
         </br>
 
-        <p>
-          <span class="bold"><i data-lucide="chevrons-right"></i> Autoclicker (AutoTap):</span>
-          You can purchase an autoclicker that clicks once per 3 second.
-          The first autoclicker costs 1000 Coinz and earns 1 Coin for each click.
-          Each subsequent autoclicker costs 1000 times the previous one and increases taps per click by 1.
-        </p>
+        <div>
+          <span class="bold blue">Total taps:</span> <span id="allTaps">0</span>
+        </div>
 
-        </br>
+        <div>
+          <span class="bold blue">AutoTap:</span> <span id="autoTap"></span>
+        </div>
 
-        <p>
-          <span class="bold"><i data-lucide="chevrons-right"></i> Game Objective:</span>
-          Your goal is to earn as many Coinz as possible by improving your earnings.
-          The game continues indefinitely, allowing you to increase your earnings.
-        </p>
+        <div>
+          <span class="bold blue">Tap upgrade:</span> <span id="nextUpgrade"></span>
+        </div>
 
-        </br>
+        <div>
+          <span class="bold blue">AutoTap upgrade:</span> <span id="nextUpgradeAuto"></span>
+        </div>
 
-        <p>The right side shows your current Coinz balance.</p>
-        <p>In the store, you can buy clicker and autoclicker upgrades.</p>
-        </br>
-        <p class="bold letsgo">Enjoy the game and improve your clicking skills to earn more COINZ!</p>
       </div>
 
+      <div class="container--rules">
+        <div>
+          <p>
+            <span class="bold"><i data-lucide="chevrons-right"></i> Upgrade for Click:</span>
+            You can upgrade the number of Coinz per click by buying improvements in the
+            store.
+            The first upgrade costs 10 Coinz and increases the number of Coinz per click to 2.
+            Each subsequent upgrade costs 10 times the previous one and increases Coinz per click by 1.
+          </p>
 
-    </div>
-  </main>
+          </br>
 
-  <footer>
-    Created by
-    <a href="https://github.com/kamaeff?tab=repositories" target="_blank">Anton Kamaev</a>
-  </footer>
+          <p>
+            <span class="bold"><i data-lucide="chevrons-right"></i> Autoclicker (AutoTap):</span>
+            You can purchase an autoclicker that clicks once per 3 second.
+            The first autoclicker costs 1000 Coinz and earns 1 Coin for each click.
+            Each subsequent autoclicker costs 1000 times the previous one and increases taps per click by 1.
+          </p>
 
+          </br>
+
+          <p>
+            <span class="bold"><i data-lucide="chevrons-right"></i> Game Objective:</span>
+            Your goal is to earn as many Coinz as possible by improving your earnings.
+            The game continues indefinitely, allowing you to increase your earnings.
+          </p>
+
+          </br>
+
+          <p>The right side shows your current Coinz balance.</p>
+          <p>In the store, you can buy clicker and autoclicker upgrades.</p>
+          </br>
+          <p class="bold letsgo">Enjoy the game and improve your clicking skills to earn more COINZ!</p>
+        </div>
+
+
+      </div>
+    </main>
+
+    <footer>
+      Created by
+      <a href="https://github.com/kamaeff?tab=repositories" target="_blank">Anton Kamaev</a>
+    </footer>
+  </div>
 
   <script type="module" src="./scripts/main.js"></script>
 
