@@ -4,6 +4,8 @@
 
 This project is a simple clicker game built using jQuery. The main features include:
 
+![Clicker](https://vimeo.com/980696824)
+
 ### Features
 
 - **User Button**: Displays the user stats. 👤
@@ -23,18 +25,38 @@ Enjoy clicking and earning coins! (Tap-Tap)
 - [Change Color and Count](#change-color-and-count)
 - [Background Animation](#background-animation)
 - [Typewriter Effect](#typewriter-effect)
+- [Tap Animation](#tap-animation)
+- [Rewards](#rewards)
 
 ### Change Color and Count
 
 ```javascript
 window.clickBtn = () => {
-  const colors = ['#7DA58D', '60718C', '#BF748E', '#F7C9B5', '#C49766'];
   $('.cliker__btn').toggleClass('active');
 
-  count += stateTap;
-  $('#count').text(count);
+  coinz += stateTap;
 
-  userCountStat.css('color', colors[Math.floor(Math.random() * colors.length)]);
+  taps++;
+  $('#count').text(coinz);
+  $('#count').css('color', colors[Math.floor(Math.random() * colors.length)]);
+  $('#allTaps').text(taps);
+
+  $('.error').text('').removeClass('show');
+
+  if (taps === 1) {
+    coinz += 100;
+    showNotification(`Hi! Let's farm! Some gift for you :)`);
+  }
+
+  let rewardAmount = reward(taps);
+  if (rewardAmount) {
+    coinz += rewardAmount;
+
+    showNotification(`Gratz! You received ${rewardAmount} Coinz as a reward.`);
+  }
+
+  createTapAnimation(colors);
+  saveGameState();
 };
 ```
 
@@ -49,7 +71,7 @@ export const switchTheme = () => {
 
   $('.container--info').toggleClass('border__dark');
 
-  $('.header__user').toggleClass('header__user--dark');
+  $('h1').toggleClass('dark_shodow');
 
   const btnState = $('.btn__state');
   const currentText = btnState.text();
@@ -62,6 +84,55 @@ export const switchTheme = () => {
 ```
 
 This function toggles various CSS classes to switch between light and dark themes. It also updates the theme toggle button's text and position.
+
+### Tap Animation
+
+```javascript
+export function createTapAnimation(colors) {
+  const tap = $('<div class="tap">TAP</div>');
+  $('body').append(tap);
+
+  const tapWidth = tap.outerWidth();
+  const tapHeight = tap.outerHeight();
+  const windowWidth = $(window).width();
+  const windowHeight = $(window).height();
+  const randomX = Math.random() * (windowWidth - tapWidth);
+  const randomY = Math.random() * (windowHeight - tapHeight);
+
+  tap.css({
+    position: 'absolute',
+    top: randomY,
+    left: randomX,
+    color: colors[Math.floor(Math.random() * colors.length)],
+  });
+
+  setTimeout(() => {
+    tap.remove();
+  }, 1000);
+}
+```
+
+The createTapAnimation function generates a visual animation on a web page where a word "TAP" appears briefly at a random position and then disappears after a short period.
+
+### Rewards
+
+```javascript
+function reward(taps) {
+  return rewards[taps] || 0;
+}
+
+function showNotification(message) {
+  $('#notificationText').text(message);
+
+  $('.notification').addClass('show');
+
+  setTimeout(function () {
+    $('.notification').removeClass('show');
+  }, 2000);
+}
+```
+
+Notifications: showNotification is used to provide feedback to the user about their actions (e.g., initial gift, rewards received)
 
 ### Typewriter Effect
 
