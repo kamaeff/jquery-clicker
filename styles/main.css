@@ -202,3 +202,15 @@ h1 {
     border-bottom: 3px dotted #fff !important;
   }
 }
+
+@media (max-width: 560px) {
+  .container {
+    height: 155vh;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    height: 185vh;
+  }
+}

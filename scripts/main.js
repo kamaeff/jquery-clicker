@@ -163,16 +163,16 @@ $('#nextUpgradeAuto').text(1000);
 $('#byTap').text(stateTap);
 $('#autoTap').text(stateAutoTap ? '✅' : '❌');
 
+$(window).on('load', function() {
+  $('#loader').fadeOut('slow', function() {
+    $('#content').fadeIn('slow');
+  });
+});
+
 $(document).ready(() => {
   console.log(
     'This is my jQuery clicker project' + '\n' + 'Created by Anton Kamaev',
   );
-
-  $(window).on('load', function() {
-    $('#loader').fadeOut('slow', function() {
-      $('#content').fadeIn('slow');
-    });
-  });
 
   loadGameState();
 
