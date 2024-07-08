@@ -1,4 +1,5 @@
 import { switchTheme, createTapAnimation } from './subfunc/func.js';
+import { colors, rewards } from './vars.js';
 import './subfunc/type.js';
 
 let coinz = 0;
@@ -8,25 +9,6 @@ let upgradeAutoTap = 0;
 let upgradeState = 0;
 let taps = 0;
 let autoTapInterval;
-
-const colors = ['#7DA58D', '#60718C', '#BF748E', '#F7C9B5', '#C49766'];
-
-const rewards = {
-  50: 25,
-  100: 50,
-  200: 100,
-  500: 250,
-  1000: 1000,
-  2000: 1000,
-  3000: 1500,
-  4000: 2000,
-  5000: 5000,
-  6000: 3000,
-  7000: 3500,
-  8000: 4000,
-  9000: 4500,
-  10000: 10000,
-};
 
 //NOTE: Save and Load user game stats
 const saveGameState = () => {
