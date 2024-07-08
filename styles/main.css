@@ -158,16 +158,14 @@ h1 {
   outline: none;
 }
 
-.button:hover,
-.button:focus {
+.button:hover {
   color: #313133;
   transform: translateY(-6px);
   background: linear-gradient(45deg, #4682b4, #87cefa, #4682b4);
   box-shadow: 2px 2px 4px #87cefa;
 }
 
-.button:hover::before,
-.button:focus::before {
+.button:hover::before {
   opacity: 1;
   animation: gradient 2s infinite;
 }

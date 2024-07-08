@@ -71,7 +71,6 @@ function reward(taps) {
 
 function showNotification(message) {
   $('#notificationText').text(message);
-
   $('.notification').addClass('show');
 
   setTimeout(function() {
@@ -89,8 +88,6 @@ window.clickBtn = () => {
   $('#count').text(coinz.toLocaleString());
   $('#count').css('color', colors[Math.floor(Math.random() * colors.length)]);
   $('#allTaps').text(taps.toLocaleString());
-
-  $('.error').text('').removeClass('show');
 
   if (taps === 1) {
     coinz += 100;
@@ -148,7 +145,9 @@ window.upgradeAutoTap = () => {
     saveGameState();
   } else {
     upgradeAutoTap--;
-    $('.error').text(`No Coinz for upgrade. Tap harder! ;)`).addClass('show');
+
+    const message = `No Coinz for upgrade. Tap harder! ;)`;
+    showNotification(message);
   }
 };
 
@@ -167,7 +166,9 @@ window.upgradeTap = () => {
     saveGameState();
   } else {
     upgradeState--;
-    $('.error').text(`No Coinz for upgrade. Tap harder! ;)`).addClass('show');
+
+    const message = `No Coinz for upgrade. Tap harder! ;)`;
+    showNotification(message);
   }
 };
 
