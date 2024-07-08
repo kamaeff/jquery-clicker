@@ -34,13 +34,13 @@ const loadGameState = () => {
     upgradeState = gameState.upgradeState;
     taps = gameState.taps;
 
-    $('#count').text(coinz);
-    $('#allTaps').text(taps);
+    $('#count').text(coinz.toLocaleString());
+    $('#allTaps').text(taps.toLocaleString());
     $('#byTap').text(stateTap);
     $('#autoTap').text(stateAutoTap ? '✅' : '❌');
-    $('#perAutoTap').text(upgradeAutoTap);
+    $('#perAutoTap').text(upgradeAutoTap.toLocaleString());
     $('#nextUpgrade').text(stateTap * 10);
-    $('#nextUpgradeAuto').text((upgradeAutoTap + 1) * 1000);
+    $('#nextUpgradeAuto').text(((upgradeAutoTap + 1) * 1000).toLocaleString());
 
     if (stateAutoTap) {
       window.autoTap();
@@ -55,7 +55,6 @@ window.changeBg = () => {
 
 const checkUpgrades = () => {
   let check = (upgradeAutoTap + 1) * 1000;
-  console.log(check);
 
   coinz >= check
     ? $('#autoBtn').addClass('highlight')
@@ -87,9 +86,9 @@ window.clickBtn = () => {
   coinz += stateTap;
 
   taps++;
-  $('#count').text(coinz);
+  $('#count').text(coinz.toLocaleString());
   $('#count').css('color', colors[Math.floor(Math.random() * colors.length)]);
-  $('#allTaps').text(taps);
+  $('#allTaps').text(taps.toLocaleString());
 
   $('.error').text('').removeClass('show');
 
@@ -116,12 +115,12 @@ window.autoTap = () => {
     autoTapInterval = setInterval(() => {
       coinz += upgradeAutoTap;
       taps++;
-      $('#count').text(coinz);
+      $('#count').text(coinz.toLocaleString());
       $('#count').css(
         'color',
         colors[Math.floor(Math.random() * colors.length)],
       );
-      $('#allTaps').text(taps);
+      $('#allTaps').text(taps.toLocaleString());
 
       createTapAnimation(colors);
       saveGameState();
@@ -140,10 +139,10 @@ window.upgradeAutoTap = () => {
     stateAutoTap = true;
     coinz -= check;
 
-    $('#count').text(coinz);
+    $('#count').text(coinz.toLocaleString());
     $('#autoTap').text('✅');
-    $('#perAutoTap').text(upgradeAutoTap);
-    $('#nextUpgradeAuto').text((upgradeAutoTap + 1) * 1000);
+    $('#perAutoTap').text(upgradeAutoTap.toLocaleString);
+    $('#nextUpgradeAuto').text(((upgradeAutoTap + 1) * 1000).toLocaleString());
 
     window.autoTap();
     saveGameState();
@@ -161,7 +160,7 @@ window.upgradeTap = () => {
     stateTap++;
     coinz -= check;
 
-    $('#count').text(coinz);
+    $('#count').text(coinz.toLocaleString());
     $('#byTap').text(stateTap);
     $('#nextUpgrade').text(stateTap * 10);
 
