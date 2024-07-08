@@ -53,9 +53,18 @@ window.changeBg = () => {
   switchTheme();
 };
 
+const checkUpgrades = () => {
+  let check = (upgradeAutoTap + 1) * 1000;
+  console.log(check);
+
+  coinz >= check
+    ? $('#autoBtn').addClass('highlight')
+    : $('#autoBtn').removeClass('highlight');
+};
+
 //NOTE: Reward notification
 function reward(taps) {
-  if (taps % 50 === 0) {
+  if (taps % 100 === 0) {
     return parseInt(5 * Math.pow(2, Math.log2(taps / 50)));
   }
   return 0;
@@ -71,6 +80,7 @@ function showNotification(message) {
   }, 2000);
 }
 
+//NOTE: Tap Logic
 window.clickBtn = () => {
   $('.cliker__btn').toggleClass('active');
 
@@ -96,6 +106,7 @@ window.clickBtn = () => {
   }
 
   createTapAnimation(colors);
+  checkUpgrades();
   saveGameState();
 };
 

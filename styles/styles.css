@@ -1,3 +1,4 @@
+@import url('./normalize.css');
 @import url('./fonts.css');
 @import url('./header.css');
 @import url('./main.css');
@@ -67,6 +68,12 @@ button {
 
 .active {
   animation: zoom-in-out 0.3s ease;
+}
+
+.highlight {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(70, 130, 180, 0.5);
+  animation: bounce 3s infinite;
 }
 
 .notification {
@@ -205,5 +212,24 @@ button {
 
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-15px);
+  }
+
+  60% {
+    transform: translateY(-7.5px);
   }
 }

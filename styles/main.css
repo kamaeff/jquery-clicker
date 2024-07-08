@@ -162,11 +162,28 @@ h1 {
 .button:focus {
   color: #313133;
   transform: translateY(-6px);
+  background: linear-gradient(45deg, #4682b4, #87cefa, #4682b4);
+  box-shadow: 2px 2px 4px #87cefa;
 }
 
 .button:hover::before,
 .button:focus::before {
   opacity: 1;
+  animation: gradient 2s infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .shop__container--btn:hover {
