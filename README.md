@@ -4,7 +4,7 @@
 
 This project is a simple clicker game built using jQuery. The main features include:
 
-![Clicker](https://vimeo.com/980696824)
+[Clicker](https://github.com/kamaeff/jquery-clicker/assets/99755906/eaeed489-e95d-4505-856e-6f3d007b0af8)
 
 ### Features
 
